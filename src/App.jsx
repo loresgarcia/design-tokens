@@ -1,26 +1,32 @@
-import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { lightTheme, darkTheme } from "./theme";
-import Button from "./components/Button";
-import "./App.css";
+import { lightTheme, darkTheme } from "./theme/theme";
+import { useState } from "react";
 
+import AppContainer from "./components/AppContainer";
+import Button from "./components/Button";
+import ToggleButton from "./components/ToggleButton";
+import styled from "styled-components";
+
+const ButtonContainer = styled.div`
+  display: flex;
+  gap: ${({ theme }) => theme.gap.medium}; 
+  justify-content: center;
+`;
 
 function App() {
   const [isDarkMode, setIsDarkMode] = useState(false);
 
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
-      <div style={{ 
-        background: isDarkMode ? darkTheme.colors.background : lightTheme.colors.background, 
-        height: "100vh", 
-        padding: "20px",
-        color: isDarkMode ? darkTheme.colors.text : lightTheme.colors.text 
-      }}>
-        <button onClick={() => setIsDarkMode(!isDarkMode)}>
-          Alternar tema
-        </button>
-        <Button>Botão acessível</Button>
-      </div>
+      <AppContainer>
+        <ButtonContainer>
+          <ToggleButton onClick={() => setIsDarkMode(!isDarkMode)} size="small">
+            {isDarkMode ? "Mudar para tema claro" : "Mudar para tema escuro"}
+          </ToggleButton>
+          <Button size="small">Clique aqui</Button>
+        </ButtonContainer>
+
+      </AppContainer>
     </ThemeProvider>
   );
 }
