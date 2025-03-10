@@ -20,10 +20,10 @@ function App() {
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <AppContainer>
         <ButtonContainer>
-          <ToggleButton onClick={() => setIsDarkMode(!isDarkMode)} size="small">
+          <ToggleButton onClick={() => setIsDarkMode(!isDarkMode)}>
             {isDarkMode ? "Mudar para tema claro" : "Mudar para tema escuro"}
           </ToggleButton>
-          <Button size="small">Clique aqui</Button>
+          <Button>Botão acessível</Button>
         </ButtonContainer>
 
       </AppContainer>
