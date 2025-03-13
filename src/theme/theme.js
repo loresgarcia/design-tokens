@@ -75,7 +75,7 @@ export const darkTheme = {
             placeholder: colors.gray100,
             button: colors.white
         },
-        primary: colors.blue200,
+        primary: colors.white,
         secondary: colors.blue100,
         focus: colors.yellow200,
         disabled: colors.gray200,
