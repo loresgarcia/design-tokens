@@ -9,7 +9,7 @@ const ToggleButton = styled(Button)`
   padding: ${({ theme }) => theme.padding.small};
 
   &:hover {
-    background-color: ${({ theme }) => theme.colors.background.primary};  
+    background-color: ${({ theme }) => theme.colors.background.secondary};  
     color: ${({ theme }) => theme.colors.primary}; 
   }
 `;
